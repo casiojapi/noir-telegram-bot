@@ -84,7 +84,7 @@ func handleProofCommand(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 		log.Panic(err)
 	}
 
-	msg = tgbotapi.NewMessage(update.Message.Chat.ID, "Mint your membership NFT at: https://localhost:5173")
+	msg = tgbotapi.NewMessage(update.Message.Chat.ID, "verify your proof at: https://localhost:8080")
 	bot.Send(msg)
 }
 
@@ -122,7 +122,7 @@ func requestProof(member string, expectedMember string) (map[string]interface{},
 
 
 func saveProofAsJSON(proof map[string]interface{}) (string, error) {
-	filename := fmt.Sprintf("only_members_proof_%d.json", time.Now().Unix())
+	filename := fmt.Sprintf("tg_proof_%d.json", time.Now().Unix())
 
 	data, err := json.MarshalIndent(proof, "", "  ")
 	if err != nil {
