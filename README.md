@@ -1,4 +1,4 @@
-# Only Members
+# noir telegram proving bot 
 
 A Telegram bot that generates zero-knowledge proofs using Noir and allows users to verify that via a webapp.
 
@@ -27,13 +27,13 @@ A Telegram bot that generates zero-knowledge proofs using Noir and allows users 
 5. Once you enter everything that the BotFather asks for you will get a token. The token is a string along the lines of ~"110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw" that is required to authorize the bot and send requests to the Bot API. Keep your token secure and store it safely, it can be used by anyone to control your bot.
 
 
-#### clone the repository:
+### clone the repository:
 ```bash
 git clone git@github.com:casiojapi/noir-telegram-bot.git
 cd noir-telegram-bot 
 ```
 
-#### set up proving server 
+### set up proving server 
 ```bash
 cd prover-server
 ```
@@ -47,7 +47,7 @@ yarn install
 node server.js
 ```
 
-#### set up telegram bot
+### set up telegram bot
 + open a new terminal inside noir-telegram-bot
 ```bash
 cd tg-bot
@@ -57,17 +57,12 @@ cd tg-bot
 export TELEGRAM_BOT_TOKEN="your_telegram_bot_token"
 ```
 
-5. start the telegram bot:
++ start the telegram bot:
 ```bash
 go run main.go
 ```
 
 The bot should now be running and responding to the `/proof` command.
-
-## customize your circuit
-
-nargo compile 
-$ bb write_vk -b target/circuit.json -o target/circuit_vk
 
 
 ## Project Components
