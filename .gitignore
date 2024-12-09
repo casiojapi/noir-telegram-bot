@@ -9,9 +9,9 @@ yarn-error.log*
 .pnp.*
 
 # Noir/Barretenberg artifacts
-membership/target/
-membership/proofs/
-membership/witnesses/
+circuit/target/
+circuit/proofs/
+circuit/witnesses/
 *.json.lock  # Lock files for circuits
 *.json.tmp
 

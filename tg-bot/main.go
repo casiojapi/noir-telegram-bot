@@ -60,7 +60,7 @@ func main() {
 func handleProofCommand(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 	memberID := fmt.Sprintf("%d", update.Message.From.ID)
 
-	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "generating your membership proof...")
+	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "generating proof...")
 	bot.Send(msg)
 	
 	proof, err := requestProof(memberID, memberID)
@@ -93,7 +93,7 @@ func requestProof(member string, expectedMember string) (map[string]interface{},
 	
 	reqBody, err := json.Marshal(ProofRequest{
 		Member:         member,
-		ExpectedMember: expectedMember,
+		ExpectedMember: member,
 	})
 	
 	if err != nil {
