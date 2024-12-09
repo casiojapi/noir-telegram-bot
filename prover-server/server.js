@@ -4,7 +4,7 @@ import { BarretenbergBackend } from '@noir-lang/backend_barretenberg';
 import { Noir } from '@noir-lang/noir_js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import circuit from './circuit/target/circuit.json' assert { type: 'json' };
+import circuit from '../circuit/target/circuit.json' assert { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -71,7 +71,7 @@ app.post('/generate-proof', async (req, res) => {
         const input = { member, expected_member };
         const result = await generateProof(input);
         console.log('Generated proof and public inputs:', result);
-        res.json(result); // Returning both proof and publicInputs (ProofData format)
+        res.json(result); // Returning both proof and publicInputs
     } catch (error) {
         console.error('Failed to generate proof:', error);
         res.status(500).json({ error: 'Failed to generate proof' });
